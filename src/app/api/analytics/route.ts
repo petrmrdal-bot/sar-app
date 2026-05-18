@@ -1,8 +1,9 @@
 import { NextResponse } from 'next/server';
 import { readFile, writeFile, access, mkdir } from 'node:fs/promises';
-import { join, dirname } from 'node:path';
+import { dirname } from 'node:path';
+import { getDataPath } from '@/lib/data-path';
 
-const DATA_FILE = join(process.cwd(), 'data', 'events.jsonl');
+const DATA_FILE = getDataPath('events.jsonl');
 
 export async function POST(request: Request) {
   try {
