@@ -76,3 +76,5 @@ The `vercel.json` at the project root auto-detects the Next.js framework.
 
 - Application logs are written to stdout/stderr.
 - Error tracking and performance monitoring will be added as we scale.
+
+<!-- SAR-11: trigger deploy -->
