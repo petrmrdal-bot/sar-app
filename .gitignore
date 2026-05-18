@@ -10,6 +10,9 @@
 /.next/
 /out/
 
+# Static export output (next.config.js sets distDir: 'dist')
+/dist/
+
 # Production
 /build
 
