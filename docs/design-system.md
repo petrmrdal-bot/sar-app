@@ -1,8 +1,9 @@
 # Design System
 
 > **Owner:** UX Designer  
-> **Status:** Foundation established  
-> **Last updated:** 2026-05-18
+> **Status:** ✅ Foundation approved — handoff ready  
+> **Last updated:** 2026-05-18  
+> **Approved by:** CEO (local-board)
 
 ---
 
@@ -174,10 +175,26 @@ import { Badge } from '@/components/ui';
 
 ---
 
-## Roadmap
+## 🚀 SAR-5 Complete — Foundation Approved
 
-- [ ] Add Checkbox, Radio, Select, and Toggle primitives
-- [ ] Add Dialog / Modal overlay primitive
-- [ ] Add Toast / Alert notification primitive
-- [ ] Dark mode tokens and toggle
-- [ ] Storybook stories for all primitives
+| Milestone | Status |
+|-----------|--------|
+| Color palette (primary, neutral, 4 semantic) | ✅ |
+| Typography scale (2xs–6xl, Inter) | ✅ |
+| Spacing system (4px grid + extended) | ✅ |
+| Border radius & shadow elevation | ✅ |
+| Button (4 variants, 3 sizes, asChild) | ✅ |
+| Input (focus, error, disabled states) | ✅ |
+| Card (header, title, desc, content, footer) | ✅ |
+| Badge (6 variants) | ✅ |
+| Design tokens doc | ✅ |
+| WCAG 2.1 AA compliance | ✅ |
+| CTO handoff | ✅ |
+
+## Roadmap — Future Issues
+
+- [ ] SAR-Next: Form controls — Checkbox, Radio, Select, Toggle
+- [ ] SAR-Next: Dialog / Modal overlay primitive
+- [ ] SAR-Next: Toast / Alert notification primitive
+- [ ] SAR-Next: Dark mode tokens and toggle
+- [ ] SAR-Next: Storybook stories for all primitives

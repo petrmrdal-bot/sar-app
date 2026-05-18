@@ -32,6 +32,8 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 | `npm run format` | Format code with Prettier |
 | `npm run format:check` | Check code formatting |
 | `npm run typecheck` | Run TypeScript type checking |
+| `npm run deploy` | Deploy to production (Vercel) |
+| `npm run deploy:preview` | Deploy preview to Vercel |
 
 ## Architecture Decisions
 
@@ -48,7 +50,21 @@ See [docs/adr/](docs/adr/) for architectural decision records (ADRs).
 
 ## Deployment
 
-The application is configured for static export (`output: 'export'`). Build artifacts are emitted to the `dist/` directory and can be deployed to any static hosting provider (Vercel, Netlify, Cloudflare Pages, etc.).
+The application uses Next.js API routes (`/api/waitlist`, `/api/analytics`) and requires a Node.js server runtime.
+
+### Recommended: Vercel (one-command deploy)
+
+```bash
+npm run deploy   # npx vercel --prod
+```
+
+The `vercel.json` at the project root auto-detects the Next.js framework.
+
+### Alternative: Any Node.js host
+
+1. `npm run build`
+2. `npm start` — serves on port 3000
+3. Proxy traffic from your domain to `localhost:3000`
 
 ## Security
 
