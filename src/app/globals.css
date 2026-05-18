@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Semantic surface tokens */
+    --surface-default: #ffffff;
+    --surface-subtle: #f8fafc;
+    --surface-muted: #f1f5f9;
+    --surface-inverse: #0f172a;
+
+    /* Semantic text tokens */
+    --text-default: #0f172a;
+    --text-subtle: #475569;
+    --text-muted: #94a3b8;
+    --text-inverse: #ffffff;
+    --text-link: #2563eb;
+    --text-link-hover: #1d4ed8;
+
+    /* Semantic border tokens */
+    --border-default: #e2e8f0;
+    --border-subtle: #cbd5e1;
+    --border-strong: #94a3b8;
+
+    /* Focus ring */
+    --focus-ring-color: rgb(59 130 246 / 0.4);
+    --focus-ring-offset: 2px;
+
+    /* Form controls */
+    --form-bg: #ffffff;
+    --form-border: #cbd5e1;
+    --form-border-hover: #94a3b8;
+    --form-border-focus: #3b82f6;
+    --form-placeholder: #94a3b8;
+    --form-text: #0f172a;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background-color: var(--surface-default);
+    color: var(--text-default);
+  }
+
+  /* Accessible focus styles — visible, high-contrast, consistent */
+  *:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--surface-default), 0 0 0 4px var(--focus-ring-color);
+    border-radius: var(--focus-ring-offset);
+  }
+
+  /* Selection styling */
+  ::selection {
+    background-color: #bfdbfe;
+    color: #1e3a8a;
+  }
+
+  /* Scrollbar styling for WebKit — thin, neutral, non-intrusive */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+  }
+
+  /* Reduced motion — respect user preference */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* High contrast mode support */
+  @media (prefers-contrast: more) {
+    *:focus-visible {
+      outline: 3px solid currentColor;
+      outline-offset: 2px;
+      box-shadow: none;
+    }
+  }
+}
+
+@layer components {
+  /* Utility for screen-reader-only text (visually hidden, accessible) */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  /* Skip link for keyboard navigation */
+  .skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #0f172a;
+    color: #ffffff;
+    padding: 8px 16px;
+    z-index: 100;
+    transition: top 0.3s;
+  }
+  .skip-link:focus {
+    top: 0;
+  }
+}
